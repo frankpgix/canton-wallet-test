@@ -1,6 +1,11 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
+
+/* 引入业务组件和页面样式 */
+@use "./components/SetToken.scss";
+@use "./pages/Home.scss";
+@use "./pages/HomeTabs.scss";
 
 /* Shadcn UI Variables */
 @layer base {
@@ -31,6 +36,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -63,12 +69,8 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
-
-/* 引入业务组件和页面样式 */
-@import "./components/SetToken.scss";
-@import "./pages/Home.scss";
-@import "./pages/HomeTabs.scss";
