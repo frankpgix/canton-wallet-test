@@ -48,9 +48,20 @@ const SetToken: FC = () => {
               placeholder="Paste your JWT Token here..."
               className="comp-set-token__textarea"
             />
-            <Button onClick={handleSaveToken} className="w-fit">
-              Set Request Token
-            </Button>
+            <div className="flex gap-4">
+              <Button onClick={handleSaveToken} className="w-fit">
+                Set Request Token
+              </Button>
+              <Button
+                variant="outline"
+                className="w-fit"
+                onClick={() =>
+                  window.open('https://wallet.validator.dev.pythagoras.obsidian.systems/', '_blank')
+                }
+              >
+                Open Obsidian Systems
+              </Button>
+            </div>
           </div>
         ) : (
           <div className="comp-set-token__display-group">
