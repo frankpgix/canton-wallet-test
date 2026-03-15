@@ -1,0 +1,25 @@
+@layer components {
+  .comp-set-token {
+    @apply w-full shadow-sm mb-8;
+
+    &__input-group {
+      @apply flex flex-col gap-4;
+    }
+
+    &__textarea {
+      @apply min-h-[100px] font-mono text-sm;
+    }
+
+    &__display-group {
+      @apply flex flex-col gap-4;
+    }
+
+    &__status {
+      @apply flex items-center gap-2 text-green-600 font-medium;
+    }
+
+    &__preview {
+      @apply bg-muted p-3 rounded-md font-mono text-xs text-muted-foreground break-all;
+    }
+  }
+}

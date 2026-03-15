@@ -1,0 +1,29 @@
+@layer components {
+  .page-home {
+    @apply max-w-[1200px] mx-auto p-5 font-sans;
+
+    &__title {
+      @apply text-3xl font-bold mb-6;
+    }
+
+    &__content-area {
+      @apply mt-8;
+    }
+
+    &__tabs-container {
+      @apply flex flex-col md:flex-row gap-6;
+    }
+
+    &__tabs-sidebar {
+      @apply flex flex-col h-auto w-full md:w-[200px] bg-transparent p-0 justify-start shrink-0 !important;
+    }
+
+    &__tabs-trigger {
+      @apply w-full justify-start data-[state=active]:bg-muted data-[state=active]:shadow-none px-4 py-2 !important;
+    }
+
+    &__tabs-content {
+      @apply m-0 focus-visible:outline-none focus-visible:ring-0;
+    }
+  }
+}
