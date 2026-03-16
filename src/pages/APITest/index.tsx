@@ -1,16 +1,10 @@
 import type { FC } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import SetToken from '../components/SetToken'
-import { TapTab, TransactionsTab, TransferTab, WalletBalanceTab } from './HomeTabs'
+import { TapTab, TransactionsTab, TransferTab, WalletBalanceTab } from './tabs'
 
 const APITest: FC = () => {
   return (
     <div className="page-api-test">
-      <h1 className="page-api-test__title">Wallet API Tester</h1>
-
-      {/* Token Management Section */}
-      <SetToken />
-
       {/* Main Content Area with Vertical Tabs */}
       <div className="page-api-test__content-area">
         <Tabs defaultValue="wallet-balance" className="page-api-test__tabs-container">

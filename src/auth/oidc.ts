@@ -1,5 +1,5 @@
 import { WebStorageStateStore } from 'oidc-client-ts'
-import { type AuthProviderProps } from 'react-oidc-context'
+import type { AuthProviderProps } from 'react-oidc-context'
 
 /**
  * OIDC Configuration for Keycloak

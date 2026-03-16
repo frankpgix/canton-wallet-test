@@ -12,9 +12,27 @@ interface RequestConfig extends Omit<RequestInit, 'body'> {
   data?: unknown
 }
 
+import { User } from 'oidc-client-ts'
+
 // Helper function to retrieve the JWT token from storage
-// You should implement your own token retrieval logic here (e.g., from localStorage, cookie, or state management)
 const getToken = (): string | null => {
+  // 1. Try to get token from OIDC storage (sessionStorage or localStorage based on config)
+  // We configured WebStorageStateStore with localStorage in oidc.ts
+  const oidcStorage = localStorage.getItem(
+    'oidc.user:https://iam.validator.dev.pythagoras.obsidian.systems/cloak/realms/canton-validator-1:alldefi-portal-ui'
+  )
+
+  if (oidcStorage) {
+    try {
+      const user = User.fromStorageString(oidcStorage)
+      return user?.access_token || null
+    } catch (e) {
+      console.warn('Failed to parse OIDC user from storage', e)
+    }
+  }
+
+  // 2. Fallback to manual token (legacy support, or if you still want to keep it)
+  // You can remove this if you want to enforce OIDC login only
   return localStorage.getItem('token')
 }
 

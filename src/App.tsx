@@ -1,11 +1,14 @@
-import { RouterProvider } from 'react-router-dom'
-import router from './router'
+import type { FC } from 'react'
+import { Outlet } from 'react-router-dom'
 import { AppAuthProvider } from './auth/AuthProvider'
+import Layout from './layout/Layout'
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
     <AppAuthProvider>
-      <RouterProvider router={router} />
+      <Layout>
+        <Outlet />
+      </Layout>
     </AppAuthProvider>
   )
 }
